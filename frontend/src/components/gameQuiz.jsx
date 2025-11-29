@@ -7,6 +7,14 @@ function GameQuiz({ onBack }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [score, setScore] = useState(0);
+  const [theme, setTheme] = useState("green");
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "green" ? "amber" : "green"));
+  };
+
+  const themeClass =
+    theme === "green" ? styles.themeGreen : styles.themeAmber;
 
   const handleStart = () => {
     setStarted(true);
@@ -39,9 +47,10 @@ function GameQuiz({ onBack }) {
     if (!started) {
       return (
         <>
-          <h1>SYSTEM_LOGIN</h1>
+          <h1> SYSTEM_LOGIN</h1>
           <p className={styles.questionText}>
-            Zugriff auf Sicherheits-Quiz anfordern.<br />
+            Zugriff auf Sicherheits-Quiz anfordern.
+            <br />
             20 Fragen. Bereit?
           </p>
           <button className={styles.retroBtn} onClick={handleStart}>
@@ -54,9 +63,10 @@ function GameQuiz({ onBack }) {
     if (isFinished) {
       return (
         <>
-          <h1>SESSION_ENDED</h1>
+          <h1> SESSION_ENDED</h1>
           <p className={styles.questionText}>
-            Analyse abgeschlossen.<br />
+            Analyse abgeschlossen.
+            <br />
             <br />
             Ergebnis: {score} / {questions.length} Pakete gesichert.
           </p>
@@ -106,9 +116,20 @@ function GameQuiz({ onBack }) {
   };
 
   return (
-    <div className={styles.appContainer}>
+    <div className={`${styles.appContainer} ${themeClass}`}>
+      <button className={styles.backBtn} onClick={onBack}>
+        ← SYSTEM_EXIT
+      </button>
+
+      <button className={styles.themeSwitchBtn} onClick={toggleTheme}>
+        COLOR_MODE: {theme.toUpperCase()}
+      </button>
+
       <div className={styles.monitorCasing}>
         <div className={styles.crtScreen}>
+          <div className={styles.scanlines}></div>
+          <div className={styles.overlay}></div>
+
           <div className={styles.uiContent}>{renderContent()}</div>
         </div>
       </div>
