@@ -1,0 +1,33 @@
+  export const questions = [
+          {
+            id: 1,
+            level: "Level 1 -- Grundlagen (leicht)",
+            question: "Was ist ein Passwort-Manager?",
+            answers: [
+              "Ein Tool zum Teilen von Passwörtern",
+              "Ein Programm zum Speichern und Generieren von Passwörtern",
+              "Ein Antivirenprogramm",
+              "Ein Cloud-Dienst zur Datensicherung",
+            ],
+            correctIndex: 1,
+          },
+          { id: 2, level: "Level 1", question: "Was bedeutet 2FA/MFA?", answers: ["Zweite Firewall aktivieren", "Mehrere Passwörter nutzen", "Zwei- oder mehrstufige Anmeldung", "Automatische Backup-Funktion"], correctIndex: 2 },
+          { id: 3, level: "Level 1", question: "Was ist Malware?", answers: ["Ein E-Mail-Anbieter", "Legitime Software", "Schadsoftware", "Hardwaredefekt"], correctIndex: 2 },
+          { id: 4, level: "Level 1", question: 'Was bedeutet „Phishing"?', answers: ["Daten sichern", "Täuschung, um Daten zu stehlen", "Offline-Arbeiten", "Netzwerk trennen"], correctIndex: 1 },
+          { id: 5, level: "Level 1", question: "Warum sind Updates wichtig?", answers: ["Sie machen Geräte schneller", "Sie ändern das Design", "Sie schließen Sicherheitslücken", "Sie reduzieren den Speicherverbrauch"], correctIndex: 2 },
+          { id: 6, level: "Level 2", question: "Was ist Social Engineering?", answers: ["Hacking per Code", "Manipulation von Menschen", "Datenbanken optimieren", "Automatische Updates"], correctIndex: 1 },
+          { id: 7, level: "Level 2", question: "Was ist ein Brute-Force-Angriff?", answers: ["Passwort mit Gewalt erzwingen", "Passwort raten durch massenhaftes Probieren", "Passwort durch Social Media finden", "Passwort durch E-Mail-Scan erhalten"], correctIndex: 1 },
+          { id: 8, level: "Level 2", question: "Was ist eine Firewall?", answers: ["Ein physischer Schutzschild", "Ein System, das Netzwerkzugriffe filtert", "Ein Programm zur Passworthilfe", "Ein Hardware-Upgrade"], correctIndex: 1 },
+          { id: 9, level: "Level 2", question: "Was ist Ransomware?", answers: ["Software zum Datenbackup", "Malware, die Lösegeld fordert", "Antivirus", "Netzwerkprotokoll"], correctIndex: 1 },
+          { id: 10, level: "Level 2", question: "Was ist das Zero-Trust-Prinzip?", answers: ["Alle Nutzer haben volle Rechte", "Nur Administratoren dürfen ins Netzwerk", "Niemand wird automatisch vertraut", "Nur interne Mitarbeiter sind vertrauenswürdig"], correctIndex: 2 },
+          { id: 11, level: "Level 3", question: "Was ist SQL-Injection?", answers: ["Datenbank reparieren", "Schadcode in SQL-Abfragen einschleusen", "SQL-Server starten", "SQL-Daten exportieren"], correctIndex: 1 },
+          { id: 12, level: "Level 3", question: "Was ist ein DDoS-Angriff?", answers: ["Passwortangriff", "Überlastung eines Systems durch Anfragen", "Hardwaredefekt", "Firewall deaktivieren"], correctIndex: 1 },
+          { id: 13, level: "Level 3", question: "Wofür wird ein VPN genutzt?", answers: ["Strom sparen", "IP-Adresse verschleiern und Verbindung verschlüsseln", "Gelöschte Daten wiederherstellen", "Internet beschleunigen"], correctIndex: 1 },
+          { id: 14, level: "Level 3", question: 'Was bedeutet „Least Privilege"?', answers: ["Alle Nutzer haben Adminrechte", "Rechte werden zufällig vergeben", "Nur minimal notwendige Berechtigungen", "Keine Berechtigungen möglich"], correctIndex: 2 },
+          { id: 15, level: "Level 3", question: "Was ist ein Hash?", answers: ["Rückrechenbare Verschlüsselung", "Eindeutiger Fingerabdruck aus Daten", "Cloud-Autorisierungsverfahren", "Browsercache"], correctIndex: 1 },
+          { id: 16, level: "Level 4", question: "Was ist ein Penetration Test?", answers: ["Unerlaubter Angriff", "Hardwareprüfung", "Autorisierter Sicherheitstest", "Datenkompression"], correctIndex: 2 },
+          { id: 17, level: "Level 4", question: 'Was bedeutet „Defense in Depth"?', answers: ["Schutz durch eine einzige Firewall", "Keine Sicherheitsstrategie", "Mehrere Sicherheitsschichten", "Nur physische Sicherheit"], correctIndex: 2 },
+          { id: 18, level: "Level 4", question: "Was ist eine Zero-Day-Lücke?", answers: ["Fehler, der erst morgen ausgenutzt werden kann", "Lücke, die bereits gepatcht ist", "Unbekannte Sicherheitslücke ohne Patch", "Fehler im Backup-System"], correctIndex: 2 },
+          { id: 19, level: "Level 4", question: "Was ist ein Man-in-the-Middle-Angriff?", answers: ["Ein Angriff auf Smartphones", "Angreifer platziert sich unbemerkt zwischen zwei Kommunikationsteilnehmer", "Ein Backup-Angriff", "Ein Spamfilterangriff"], correctIndex: 1 },
+          { id: 20, level: "Level 4", question: "Was ist eine Sandbox?", answers: ["Öffentlicher Webserver", "Sichere Testumgebung", "Firewall-Erweiterung", "Passwortspeicher"], correctIndex: 1  }
+  ];
