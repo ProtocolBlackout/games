@@ -1,10 +1,16 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+import Quiz from './components/gameQuiz'
 import './App.css'
 
 function App() {
   const [count, setCount] = useState(0)
+  const [showQuiz, setShowQuiz] = useState(false)
+
+  if (showQuiz) {
+ return <Quiz onBack={() => setShowQuiz(false)} />
+  }
 
   return (
     <>
@@ -17,6 +23,9 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <div style={{ margin: '1rem 0' }}>
+        <button onClick={() => setShowQuiz(true)}>Zum Quiz</button>
+      </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
