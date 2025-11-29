@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./gameQuiz.module.css";
 import { questions } from "./questions";
 
 function GameQuiz({ onBack }) {
@@ -39,8 +40,13 @@ function GameQuiz({ onBack }) {
       return (
         <>
           <h1>SYSTEM_LOGIN</h1>
-          <p>20 Fragen. Bereit?</p>
-          <button onClick={handleStart}>[ VERBINDUNG HERSTELLEN ]</button>
+          <p className={styles.questionText}>
+            Zugriff auf Sicherheits-Quiz anfordern.<br />
+            20 Fragen. Bereit?
+          </p>
+          <button className={styles.retroBtn} onClick={handleStart}>
+            [ VERBINDUNG HERSTELLEN ]
+          </button>
         </>
       );
     }
@@ -49,8 +55,14 @@ function GameQuiz({ onBack }) {
       return (
         <>
           <h1>SESSION_ENDED</h1>
-          <p>Ergebnis: {score} / {questions.length}</p>
-          <button onClick={handleRestart}>[ NEUSTART ]</button>
+          <p className={styles.questionText}>
+            Analyse abgeschlossen.<br />
+            <br />
+            Ergebnis: {score} / {questions.length} Pakete gesichert.
+          </p>
+          <button className={styles.retroBtn} onClick={handleRestart}>
+            [ NEUSTART ]
+          </button>
         </>
       );
     }
@@ -58,11 +70,33 @@ function GameQuiz({ onBack }) {
     const currentQuestion = questions[currentIndex];
     return (
       <>
-        <h2>FRAGE {currentIndex + 1} / {questions.length}</h2>
-        <p>{currentQuestion.question}</p>
-        <div>
+        <h2
+          style={{
+            borderBottom: "1px dashed currentColor",
+            width: "100%",
+            textAlign: "center",
+            paddingBottom: "10px",
+          }}
+        >
+          FRAGE {currentIndex + 1} / {questions.length}
+        </h2>
+
+        <p className={styles.questionText}>{currentQuestion.question}</p>
+
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            width: "100%",
+            alignItems: "center",
+          }}
+        >
           {currentQuestion.answers.map((answer, index) => (
-            <button key={index} onClick={() => handleAnswerClick(index)}>
+            <button
+              key={index}
+              className={styles.retroBtn}
+              onClick={() => handleAnswerClick(index)}
+            >
               {answer}
             </button>
           ))}
@@ -72,9 +106,12 @@ function GameQuiz({ onBack }) {
   };
 
   return (
-    <div>
-      <button onClick={onBack}>← SYSTEM_EXIT</button>
-      {renderContent()}
+    <div className={styles.appContainer}>
+      <div className={styles.monitorCasing}>
+        <div className={styles.crtScreen}>
+          <div className={styles.uiContent}>{renderContent()}</div>
+        </div>
+      </div>
     </div>
   );
 }

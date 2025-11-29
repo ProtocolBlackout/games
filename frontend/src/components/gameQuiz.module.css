@@ -1,0 +1,84 @@
+:root {
+  --bg-dark: #111111;
+  --green-neon: #00FF00;
+  --blue-deep: #0033AA;
+  --purple-retro: #711D9A;
+  --purple-alt: #A42DB4;
+  --cyan-neon: #00FFD0;
+  --text-white: #F4F4FF;
+}
+.appContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-dark);
+  background-image: radial-gradient(circle at center, #222 0%, #000 100%);
+  font-family: "Courier New", Courier, monospace;
+  color: var(--green-neon);
+  overflow: hidden;
+}
+
+/* Monitor-Body z.B. mit deep blue / retro purple mischen */
+.monitorCasing {
+  position: relative;
+  width: 900px;
+  max-width: 95vw;
+  aspect-ratio: 4/3;
+  background: var(--bg-dark);
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 
+      inset 0 0 15px #000,
+      0 0 50px rgba(0,0,0,0.8),
+      0 0 0 2px #333;
+}
+
+/* Screen */
+.crtScreen {
+  width: 100%;
+  height: 100%;
+  background-color: #080c08;
+  border-radius: 40px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.8);
+}
+
+/* Text/Konturen über main color */
+.uiContent {
+  position: relative;
+  z-index: 5;
+  padding: 40px;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+}
+
+/* Buttons nutzen z.B. neon-cyan als Akzent */
+.retroBtn {
+  background: transparent;
+  border: 2px solid var(--green-neon);
+  color: var(--green-neon);
+  padding: 15px 30px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 0 5px var(--green-neon);
+  transition: all 0.1s ease;
+  margin: 10px;
+  width: 80%;
+  max-width: 500px;
+}
+
+.retroBtn:hover {
+  background: var(--green-neon);
+  color: #000;
+  box-shadow: 0 0 20px var(--green-neon);
+}
